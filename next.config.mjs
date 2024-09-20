@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  basePath: '/saidiadem.github.io',
+  assetPrefix: '/saidiadem.github.io',
+  output:'export',
   async headers() {
     return [
       {
