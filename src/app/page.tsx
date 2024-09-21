@@ -6,15 +6,13 @@ import BallPool from "@/components/DraggableSkills/MatterBox";
 import { Box } from "@mui/system";
 import ProjectShowcase from "@/components/ProjectComponent/ProjectShowcase";
 import { FaReact, FaNodeJs, FaDatabase ,FaPhp,FaSymfony} from 'react-icons/fa';
-import projectPatGif from '../../public/2024-09-02-02-59-33.gif';
-import fthnityGif from '../../public/Untitled design.gif';
 import { Typography } from "@mui/material";
 import ResumePage from "./resume";
 import MatterBox from "@/components/DraggableSkills/MatterBox";
 export default function Page() {
   const projects = [
     {
-      gifUrl: projectPatGif,
+      gifUrl: '/2024-09-02-02-59-33.gif',
       description: 'This is a project I worked on in collaboration for an animal shelter association in Tunisia.',
       techStack: [
         { name: 'React', icon: <FaReact /> },
@@ -23,7 +21,7 @@ export default function Page() {
       ],
     },
     {
-      gifUrl: fthnityGif,
+      gifUrl: '/Untitled design.gif',
       description: 'This is a carpooling app I worked on where users can add new rides , join existing rides and contact people or report them if needed.',
       techStack: [
         { name: 'React', icon: <FaReact /> },
@@ -40,7 +38,7 @@ export default function Page() {
       {projects.map((project, index) => (
         <Box key={index} sx={{ mb: 8  }}>
           <ProjectShowcase
-            gifUrl={project.gifUrl.src}
+            gifUrl={project.gifUrl}
             description={project.description}
             techStack={project.techStack}
           />
