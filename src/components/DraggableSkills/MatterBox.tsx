@@ -11,7 +11,7 @@ const MatterBox = () => {
     const engine = engineRef.current;
     const world = engine.world;
 
-    const renderWidth = 500;
+    const renderWidth = 700;
     const renderHeight = 500; 
 
     const render = Render.create({
@@ -21,9 +21,9 @@ const MatterBox = () => {
         width: renderWidth,
         height: renderHeight,
         showAngleIndicator: false,
-        wireframeBackground: theme==='light'?'#FFFFFF':'#141414',
+        wireframeBackground: theme==='light'?'#afababb1':'#141414',
         wireframes: false,
-        background: theme==='light'?'#FFFFFF':'#141414',
+        background: theme==='light'?'#afababb1':'#141414',
       },
     });
 

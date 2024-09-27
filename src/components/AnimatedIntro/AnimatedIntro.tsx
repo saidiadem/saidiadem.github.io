@@ -42,6 +42,7 @@ const Name = styled(Typography)(() => ({
 
 const Title = styled(Typography)(() => ({
   position: 'absolute',
+  fontFamily:'sans-serif',
   top: '55%',
   left: '50%',
   transform: 'translate(-50%, -50%)',

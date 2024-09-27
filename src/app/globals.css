@@ -132,7 +132,7 @@
   width: 1rem;
   margin-right: 2rem;
   text-align: right;
-  color: gray;
+  color: #afababb1;
 }
  
 code[data-line-numbers-max-digits="2"] > [data-line]::before {
@@ -141,4 +141,9 @@ code[data-line-numbers-max-digits="2"] > [data-line]::before {
  
 code[data-line-numbers-max-digits="3"] > [data-line]::before {
   width: 3rem;
+}
+.code-text {
+  color: rgb(255, 255, 255);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5em;
 }
