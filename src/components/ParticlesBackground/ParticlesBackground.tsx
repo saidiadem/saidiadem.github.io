@@ -2,11 +2,13 @@ import React from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import './ParticlesBackground.css'; 
+import { useTheme } from 'next-themes';
 
 const ParticlesBackground: React.FC = () => {
   const particlesInit = async (main: any) => {
     await loadFull(main);
   };
+  const theme = useTheme();
 
   return (
     <div className="particles-container">
@@ -21,7 +23,7 @@ const ParticlesBackground: React.FC = () => {
             links: {
               enable: true,
               distance: 150,
-              color: "#ffffff",
+              color: theme.theme === 'dark' ? '#ffffff' : '#000000',
               opacity: 0.5,
               width: 1,
             },
