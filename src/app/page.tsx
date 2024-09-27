@@ -60,7 +60,7 @@ export default function Page() {
           />
         </Box>
       ))}
-      <BlurFadeText text="</Projects>" className="code-text mb-8" />
+      <BlurFadeText text="</Projects>" className="code-text mb-8"/>
 
       <BlurFadeText text="<Skills>" className="code-text" />
       <BlurFade>

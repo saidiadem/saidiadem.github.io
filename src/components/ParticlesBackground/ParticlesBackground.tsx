@@ -20,6 +20,9 @@ const ParticlesBackground: React.FC = () => {
             number: {
               value: 15,
             },
+            color: {
+              value: theme.theme === 'dark' ? '#ffffff' : '#000000',
+            },
             links: {
               enable: true,
               distance: 150,
