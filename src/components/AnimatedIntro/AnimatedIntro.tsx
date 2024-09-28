@@ -67,7 +67,7 @@ const AnimatedIntro: React.FC = () => {
       <Name variant="h4" className={animate ? 'animate' : ''} sx={{ color: theme.theme === 'dark' ? 'white' : 'black' }}>
         Adem Saidi
       </Name>
-      <Title variant="subtitle1" className={animate ? 'animate' : ''}>
+      <Title variant="subtitle1" className={animate ? 'animate' : ''} sx={{ color: theme.theme === 'dark' ? 'white' : 'black' }}>
         Software Engineer & AI Enthusiast
       </Title>
     </Container>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
+import { useTheme } from 'next-themes';
 
 interface ProjectShowcaseProps {
   gifUrl: string;
@@ -8,8 +9,9 @@ interface ProjectShowcaseProps {
 }
 
 const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ gifUrl, description, techStack }) => {
+  const {theme}=useTheme();
   return (
-    <Box sx={{ flexGrow: 1, p: 2, border: '1px solid #ddd', borderRadius: '8px', boxShadow: 3 }}>
+    <Box sx={{ flexGrow: 1, p: 2, border: '1px solid #ddd', borderRadius: '8px', boxShadow: 3,backgroundColor:theme === 'light' ? '#f7fafc' : '#121212'}}>
       <Grid container spacing={4} alignItems="center"> {/* Increase spacing */}
         {/* GIF Section */}
         <Grid item xs={12} md={7}> {/* Increase width for larger screens */}
