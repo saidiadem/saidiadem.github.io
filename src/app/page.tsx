@@ -5,7 +5,7 @@ const BLUR_FADE_DELAY = 0.04;
 import BallPool from "@/components/DraggableSkills/MatterBox";
 import { Box } from "@mui/system";
 import ProjectShowcase from "@/components/ProjectComponent/ProjectShowcase";
-import { FaReact, FaNodeJs, FaDatabase, FaPhp, FaSymfony } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaDatabase, FaPhp, FaSymfony, FaPython } from 'react-icons/fa';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Card, Typography } from "@mui/material";
@@ -35,6 +35,12 @@ export default function Page() {
         { name: 'Php', icon: <FaPhp /> },
         { name: 'MySQL', icon: <FaDatabase /> },
         { name: 'Symfony', icon: <FaSymfony /> },
+      ],
+      gifUrl: '/relib.gif',
+      description: 'ReLib is an AI-powered platform designed to identify and mitigate colonial bias in Wikipedia articles, developed during the Unbreaking News 2.0 hackathon.',
+      techStack: [
+        { name: 'React', icon: <FaPython /> },
+        { name: 'MySQL', icon: <FaDatabase /> },
       ],
     }
   ];
