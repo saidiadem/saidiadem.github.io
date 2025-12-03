@@ -40,13 +40,18 @@ export default function Page() {
   ];
   const carouselItems = [
     {
+      imageUrl: '/unbreaking.png',
+      description: 'Won first place in Unbreaking news 2.0 hackathon by building ReLib: an AI-powered platform for detecting colonial bias in Wikipedia articles',
+    },
+    {
       imageUrl: '/cybersphere.png',
-      description: 'I participated in the national cybersecurity cybersphere congress , where our team Fokspy secured 4th place in the challenging CTF that took place  .',
+      description: 'Participated in the national cybersecurity cybersphere congress , where our team Fokspy secured 4th place in the challenging CTF that took place  .',
     },
     {
       imageUrl: '/wintercup.png',
-      description: 'I participated in many competitive programming contests , the wintercup has been one of the most exhilerating experiences where we got to be in the top 25 among the very best.',
+      description: 'Participated in many competitive programming contests , the wintercup has been one of the most exhilerating experiences where we got to be in the top 25 among the very best.',
     },
+    
   ];
   const { theme } = useTheme();
   const textClass = theme === 'light' ? 'text-light' : 'text-dark';
@@ -66,7 +71,7 @@ export default function Page() {
           flexDirection: 'column',
           border:'none',
           boxShadow: 'none',
-          backgroundColor:theme === 'light' ? '#f7fafc' : '#121212',
+          backgroundColor:theme === 'light' ? '#f7fafc' : '#000000',
         }
       }>
       <AnimatedIntro />
