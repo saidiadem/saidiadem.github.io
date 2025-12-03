@@ -36,6 +36,8 @@ export default function Page() {
         { name: 'MySQL', icon: <FaDatabase /> },
         { name: 'Symfony', icon: <FaSymfony /> },
       ],
+    },
+    {
       gifUrl: '/relib.gif',
       description: 'ReLib is an AI-powered platform designed to identify and mitigate colonial bias in Wikipedia articles, developed during the Unbreaking News 2.0 hackathon.',
       techStack: [
