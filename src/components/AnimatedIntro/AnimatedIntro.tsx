@@ -61,14 +61,14 @@ const AnimatedIntro: React.FC = () => {
   }, []);
 
   return (
-    <Container sx={{ position: 'relative', height: '50vh' }}>
+    <Container sx={{ position: 'relative', height: '50vh', backgroundColor: 'transparent' }}>
       <LineTop  className={animate ? 'animate' : ''}  sx={{backgroundColor:theme.theme === 'dark' ? 'white' : 'black'}}/>
       <LineBottom  className={animate ? 'animate' : ''} sx={{backgroundColor:theme.theme === 'dark' ? 'white' : 'black'}} />
       <Name variant="h4" className={animate ? 'animate' : ''} sx={{ color: theme.theme === 'dark' ? 'white' : 'black' }}>
         Adem Saidi
       </Name>
       <Title variant="subtitle1" className={animate ? 'animate' : ''} sx={{ color: theme.theme === 'dark' ? 'white' : 'black' }}>
-        Software Engineer & AI Enthusiast
+        AI Software Engineer
       </Title>
     </Container>
   );

@@ -20,7 +20,7 @@ export default function Page() {
   const projects = [
     {
       gifUrl: '/2024-09-02-02-59-33.gif',
-      description: 'This is a project I worked on in collaboration for an animal shelter association in Tunisia.',
+      description: 'This is a project I worked on for an animal shelter association in Tunisia.',
       techStack: [
         { name: 'React', icon: <FaReact /> },
         { name: 'Node.js', icon: <FaNodeJs /> },
@@ -41,7 +41,7 @@ export default function Page() {
       gifUrl: '/relib.gif',
       description: 'ReLib is an AI-powered platform designed to identify and mitigate colonial bias in Wikipedia articles, developed during the Unbreaking News 2.0 hackathon.',
       techStack: [
-        { name: 'React', icon: <FaPython /> },
+        { name: 'Python', icon: <FaPython /> },
         { name: 'MySQL', icon: <FaDatabase /> },
       ],
     }
@@ -79,7 +79,7 @@ export default function Page() {
           flexDirection: 'column',
           border:'none',
           boxShadow: 'none',
-          backgroundColor:theme === 'light' ? '#f7fafc' : '#000000',
+          backgroundColor: 'transparent',
         }
       }>
       <AnimatedIntro />
