@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 
 interface ProjectShowcaseProps {
   gifUrl: string;
@@ -12,19 +13,24 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ gifUrl, description, 
   const {theme}=useTheme();
   return (
     <Box sx={{ flexGrow: 1, p: 2, border: '1px solid #ddd', borderRadius: '8px', boxShadow: 3,backgroundColor:theme === 'light' ? '#f7fafc' : '#121212'}}>
-      <Grid container spacing={4} alignItems="center"> {/* Increase spacing */}
+      <Grid container spacing={4} alignItems="center">
         {/* GIF Section */}
-        <Grid item xs={12} md={7}> {/* Increase width for larger screens */}
-          <Box 
-            component="img" 
-            src={gifUrl} 
-            alt="Project GIF" 
-            sx={{ width: '60%', borderRadius: '8px' }} 
-          />
+        <Grid item xs={12} md={7}>
+          <Box sx={{ position: 'relative', width: '60%', height: 'auto' }}>
+            <Image
+              src={gifUrl}
+              alt="Project demonstration"
+              width={600}
+              height={400}
+              loading="lazy"
+              style={{ borderRadius: '8px', width: '100%', height: 'auto' }}
+              unoptimized // Required for GIFs
+            />
+          </Box>
         </Grid>
         
         {/* Description & Tech Stack Section */}
-        <Grid item xs={12} md={5}> {/* Adjust width for larger screens */}
+        <Grid item xs={12} md={5}>
           <Box sx={{ textAlign: 'left' }}>
             <Typography variant="h6" gutterBottom>
               Project Description
