@@ -1,8 +1,8 @@
 "use client";
 
+import dynamic from 'next/dynamic';
 import AnimatedIntro from "@/components/AnimatedIntro/AnimatedIntro";
 const BLUR_FADE_DELAY = 0.04;
-import BallPool from "@/components/DraggableSkills/MatterBox";
 import { Box } from "@mui/system";
 import ProjectShowcase from "@/components/ProjectComponent/ProjectShowcase";
 import { FaReact, FaNodeJs, FaDatabase, FaPhp, FaSymfony, FaPython } from 'react-icons/fa';
@@ -10,12 +10,21 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Card, Typography } from "@mui/material";
 import ResumePage from "./resume";
-import MatterBox from "@/components/DraggableSkills/MatterBox";
 import BlurFadeText from "../components/magicui/blur-fade-text";
 import BlurFade from "@/components/magicui/blur-fade";
-import ParticlesBackground from "@/components/ParticlesBackground/ParticlesBackground";
 import { useTheme } from "next-themes";
 import Image from 'next/image';
+
+// Lazy load heavy components
+const MatterBox = dynamic(() => import("@/components/DraggableSkills/MatterBox"), {
+  ssr: false,
+  loading: () => <div style={{height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Loading skills...</div>
+});
+
+const ParticlesBackground = dynamic(() => import("@/components/ParticlesBackground/ParticlesBackground"), {
+  ssr: false,
+});
+
 export default function Page() {
   const projects = [
     {
@@ -72,6 +81,7 @@ export default function Page() {
   ];
   const { theme } = useTheme();
   const textClass = theme === 'light' ? 'text-light' : 'text-dark';
+  
   return (
     <main className="flex flex-col w-full min-h-screen justify-center items-center  ">
       <ParticlesBackground />
@@ -115,7 +125,14 @@ export default function Page() {
         <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay>
           {carouselItems.map((item, index) => (
             <Box key={index} sx={{ mb: 8, textAlign: 'center' }}>
-              <Image src={item.imageUrl} alt={`Carousel item ${index + 1}`} width={600} height={400} />
+              <Image 
+                src={item.imageUrl} 
+                alt={`Carousel item ${index + 1}`} 
+                width={600} 
+                height={400}
+                loading="lazy"
+                quality={85}
+              />
               <p>{item.description}</p>
             </Box>
           ))}

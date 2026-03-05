@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
 import { useTheme } from 'next-themes';
 
@@ -6,6 +6,30 @@ const MatterBox = () => {
   const { theme } = useTheme();
   const sceneRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef<Matter.Engine>(Matter.Engine.create());
+  const runnerRef = useRef<Matter.Runner | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sceneRef.current) {
+      observer.observe(sceneRef.current);
+    }
+
+    return () => {
+      if (sceneRef.current) {
+        observer.unobserve(sceneRef.current);
+      }
+    };
+  }, []);
+
   useEffect(() => {
     const { Engine, Render, Runner, Mouse, MouseConstraint, World, Bodies, Composite, Composites } = Matter;
     const engine = engineRef.current;
@@ -29,9 +53,9 @@ const MatterBox = () => {
 
 
     Render.run(render);
-    console.log(render);
 
     const runner = Runner.create();
+    runnerRef.current = runner;
     Runner.run(runner, engine);
    
     Composite.add(world, [
@@ -116,8 +140,10 @@ const MatterBox = () => {
 
     return () => {
       Render.stop(render);
-      Runner.stop(runner);
-      World.clear(world, false); // Pass 'false' as the second argument
+      if (runnerRef.current) {
+        Runner.stop(runnerRef.current);
+      }
+      World.clear(world, false);
       Engine.clear(engine);
       render.canvas.remove();
       (render.canvas as unknown)= null;
@@ -126,6 +152,16 @@ const MatterBox = () => {
     };
   }, [theme]);
 
+  // Pause/resume engine based on visibility
+  useEffect(() => {
+    if (runnerRef.current) {
+      if (isVisible) {
+        runnerRef.current.enabled = true;
+      } else {
+        runnerRef.current.enabled = false;
+      }
+    }
+  }, [isVisible]);
 
   return <div ref={sceneRef} style={{ width: '100%', height: '100%' }} />;
 };
