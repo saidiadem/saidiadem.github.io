@@ -44,6 +44,15 @@ export default function Page() {
         { name: 'Python', icon: <FaPython /> },
         { name: 'MySQL', icon: <FaDatabase /> },
       ],
+    },
+    {
+      gifUrl: '/klippy.gif',
+      description: 'Klippy is a virtual assistant designed to enhance productivity by providing quick access to information, managing tasks, and offering personalized support, developed during the AI Minds hackathon.',
+      techStack: [
+        { name: 'Python', icon: <FaPython /> },
+        { name: 'Qdrant', icon: <FaDatabase /> },
+        { name: 'Neo4j', icon: <FaDatabase /> },
+      ],
     }
   ];
   const carouselItems = [
