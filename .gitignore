@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Raw portfolio recordings (publish compressed derivatives only)
+/2026-06-24 22-59-16.mp4
