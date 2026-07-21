@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import MatterBox from "@/components/DraggableSkills/MatterBox";
+import AwardsCarousel from "@/components/AwardsCarousel/AwardsCarousel";
 import {
   ArrowUpRight,
   Award,
@@ -251,7 +252,7 @@ export default function Page() {
 
       <section className="section shell skills-section" id="skills">
         <p className="code-tag" aria-hidden="true">&lt;Skills&gt;</p>
-        <SectionHeading kicker="02 / Skills" description="Grab a technology and throw it around. Yes, the stack has physics.">
+        <SectionHeading kicker="02 / Skills" description="Grab a logo and throw it around. Yes, the stack has physics.">
           The toolbox, but make it draggable.
         </SectionHeading>
         <div className="skills-playground">
@@ -317,22 +318,7 @@ export default function Page() {
         <SectionHeading kicker="04 / More work & recognition">
           Breadth, without the project graveyard.
         </SectionHeading>
-        <figure className="award-moment">
-          <Image
-            src={`${MEDIA_URL}/gommage-third-place.png`}
-            alt="The Gommage team receiving third place at the Artificial Intelligence National Summit Hackathon"
-            width={1280}
-            height={852}
-            unoptimized
-          />
-          <figcaption>
-            <div>
-              <p>Artificial Intelligence National Summit · June 2026</p>
-              <h3>Gommage finished third.</h3>
-            </div>
-            <span>Agentic AI for Enterprise Automation</span>
-          </figcaption>
-        </figure>
+        <AwardsCarousel />
         <div className="recognition-grid">
           <div className="award-card featured-award">
             <Award />

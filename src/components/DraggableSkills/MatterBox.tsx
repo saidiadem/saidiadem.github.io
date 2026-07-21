@@ -15,8 +15,6 @@ const skills = [
   ["Scikit-learn", "#f4a261", "scikitlearn/F7931E"],
   ["Hugging Face", "#f2cf4a", "huggingface/FFD21E"],
   ["LangChain", "#8ed1c2", "langchain/1C3C3C"],
-  ["LangGraph", "#b895ff", "langchain/1C3C3C"],
-  ["RAG", "#b8ff5a", "langchain/1C3C3C"],
   ["Qdrant", "#ff6f9c", "qdrant/DC244C"],
   ["Milvus", "#66d9ef", "milvus/00A1EA"],
   ["Neo4j", "#73b7ff", "neo4j/4581C3"],
@@ -38,7 +36,7 @@ const skills = [
 ] as const;
 
 type SkillBody = Matter.Body & {
-  plugin: { skillLabel?: string; skillColor?: string; skillIcon?: HTMLImageElement };
+  plugin: { skillName?: string; skillIcon?: HTMLImageElement };
 };
 
 export default function MatterBox() {
@@ -64,7 +62,7 @@ export default function MatterBox() {
 
     const { Bodies, Composite, Engine, Events, Mouse, MouseConstraint, Render, Runner } = Matter;
     const width = Math.min(scene.clientWidth || 760, 760);
-    const height = width < 520 ? 360 : 410;
+    const height = width < 520 ? 300 : 340;
     const compact = width < 520;
     const engine = Engine.create({ gravity: { x: 0, y: 0.72 } });
     const world = engine.world;
@@ -96,15 +94,12 @@ export default function MatterBox() {
     const bodies: SkillBody[] = [];
     skills.forEach(([label, color, icon], index) => {
       const timer = setTimeout(() => {
-        const bodyWidth = Math.max(compact ? 86 : 100, label.length * (compact ? 8 : 9) + 56);
-        const bodyHeight = compact ? 38 : 44;
-        const body = Bodies.rectangle(
-          bodyWidth / 2 + Math.random() * Math.max(1, width - bodyWidth),
+        const radius = compact ? 22 : 26;
+        const body = Bodies.circle(
+          radius + Math.random() * Math.max(1, width - radius * 2),
           26 + Math.random() * 82,
-          bodyWidth,
-          bodyHeight,
+          radius,
           {
-            chamfer: { radius: bodyHeight / 2 },
             restitution: 0.64,
             friction: 0.34,
             frictionAir: 0.012,
@@ -115,8 +110,7 @@ export default function MatterBox() {
             },
           },
         ) as SkillBody;
-        body.plugin.skillLabel = label;
-        body.plugin.skillColor = color;
+        body.plugin.skillName = label;
         const image = new Image();
         image.crossOrigin = "anonymous";
         image.src = `https://cdn.simpleicons.org/${icon}`;
@@ -127,36 +121,27 @@ export default function MatterBox() {
       timers.push(timer);
     });
 
-    const drawLabels = () => {
+    const drawLogos = () => {
       const context = render.context;
-      context.textAlign = "center";
-      context.textBaseline = "middle";
-      context.font = `700 ${compact ? 11 : 12}px SFMono-Regular, Consolas, monospace`;
       bodies.forEach((body) => {
-        const label = body.plugin.skillLabel;
-        if (!label) return;
-        context.save();
-        context.translate(body.position.x, body.position.y);
-        context.rotate(body.angle);
         const icon = body.plugin.skillIcon;
-        const iconSize = compact ? 13 : 15;
-        const textOffset = icon ? 9 : 0;
         if (icon?.complete && icon.naturalWidth > 0) {
-          const textWidth = context.measureText(label).width;
+          const iconSize = compact ? 22 : 26;
+          context.save();
+          context.translate(body.position.x, body.position.y);
+          context.rotate(body.angle);
           context.drawImage(
             icon,
-            -textWidth / 2 - iconSize - 5,
+            -iconSize / 2,
             -iconSize / 2,
             iconSize,
             iconSize,
           );
+          context.restore();
         }
-        context.fillStyle = body.plugin.skillColor || "#f2f1ec";
-        context.fillText(label, textOffset, 1);
-        context.restore();
       });
     };
-    Events.on(render, "afterRender", drawLabels);
+    Events.on(render, "afterRender", drawLogos);
 
     const mouse = Mouse.create(render.canvas);
     const mouseConstraint = MouseConstraint.create(engine, {
@@ -168,7 +153,7 @@ export default function MatterBox() {
 
     return () => {
       timers.forEach(clearTimeout);
-      Events.off(render, "afterRender", drawLabels);
+      Events.off(render, "afterRender", drawLogos);
       Render.stop(render);
       Runner.stop(runner);
       Composite.clear(world, false);
@@ -188,7 +173,7 @@ export default function MatterBox() {
       ref={sceneRef}
       className="matter-scene"
       role="img"
-      aria-label="Interactive draggable technology skill chips"
+      aria-label={`Interactive draggable technology logos: ${skills.map(([name]) => name).join(", ")}`}
     />
   );
 }

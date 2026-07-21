@@ -107,7 +107,7 @@ main { position: relative; min-height: 100vh; }
 .skills-caption div { display: flex; flex-direction: column; gap: 4px; }
 .skills-caption strong { font-size: 13px; }
 .skills-caption span { color: var(--muted); font-size: 11px; line-height: 1.5; }
-.matter-scene { width: 100%; height: 410px; cursor: grab; touch-action: none; }
+.matter-scene { width: 100%; height: 340px; cursor: grab; touch-action: none; }
 .matter-scene:active { cursor: grabbing; }
 .matter-scene canvas { display: block; width: 100% !important; height: 100% !important; }
 
@@ -144,6 +144,17 @@ main { position: relative; min-height: 100vh; }
 .award-moment figcaption p { margin: 0 0 6px; color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; }
 .award-moment figcaption h3 { margin: 0; font-size: 25px; letter-spacing: -.04em; }
 .award-moment figcaption > span { color: var(--muted); font: 11px/1.5 monospace; text-align: right; }
+.award-carousel-media { position: relative; overflow: hidden; background: #090b0d; }
+.award-carousel-media img { animation: carousel-reveal .35s ease; }
+.carousel-arrow { position: absolute; top: 50%; z-index: 2; width: 44px; height: 44px; display: grid; place-items: center; color: var(--text); background: rgba(8,10,12,.76); border: 1px solid rgba(255,255,255,.22); border-radius: 50%; cursor: pointer; transform: translateY(-50%); transition: color .2s ease, border-color .2s ease, background .2s ease; backdrop-filter: blur(8px); }
+.carousel-arrow:hover { color: var(--accent); border-color: var(--accent); background: rgba(8,10,12,.92); }
+.carousel-arrow svg { width: 20px; }
+.carousel-arrow-left { left: 18px; }
+.carousel-arrow-right { right: 18px; }
+.carousel-dots { position: absolute; left: 50%; bottom: 17px; z-index: 2; display: flex; gap: 7px; padding: 8px 10px; background: rgba(8,10,12,.72); border-radius: 999px; transform: translateX(-50%); backdrop-filter: blur(8px); }
+.carousel-dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.42); cursor: pointer; transition: width .2s ease, border-radius .2s ease, background .2s ease; }
+.carousel-dots button.active { width: 23px; border-radius: 999px; background: var(--accent); }
+@keyframes carousel-reveal { from { opacity: .45; } to { opacity: 1; } }
 .recognition-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .award-card { min-height: 245px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 26px; display: flex; flex-direction: column; justify-content: flex-end; }
 .award-card > svg { margin-bottom: auto; color: var(--accent); }
@@ -179,11 +190,14 @@ footer { padding: 30px 0 100px; display: flex; justify-content: space-between; c
   .projects-grid { grid-template-columns: 1fr; }
   .project-media { height: min(58vw, 390px); }
   .project-description { min-height: auto; }
-  .matter-scene { height: 360px; }
+  .matter-scene { height: 300px; }
   .experience-meta { display: flex; justify-content: space-between; align-items: center; }
   .recognition-grid { grid-template-columns: 1fr; }
   .award-moment figcaption { align-items: flex-start; flex-direction: column; gap: 9px; }
   .award-moment figcaption > span { text-align: left; }
+  .carousel-arrow { width: 38px; height: 38px; }
+  .carousel-arrow-left { left: 10px; }
+  .carousel-arrow-right { right: 10px; }
   .award-card { min-height: 200px; }
 }
 
