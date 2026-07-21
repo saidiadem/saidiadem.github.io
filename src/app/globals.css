@@ -61,6 +61,16 @@ main { position: relative; min-height: 100vh; }
 .signal-grid span { font-size: 12px; color: var(--muted); }
 
 .section { padding: 135px 0 20px; scroll-margin-top: 30px; }
+.code-tag {
+  width: fit-content;
+  margin: 0 0 34px;
+  color: var(--accent);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(16px, 1.7vw, 22px);
+  letter-spacing: -.04em;
+  text-shadow: 0 0 24px rgba(184, 255, 90, .22);
+}
+.code-tag-close { margin: 42px 0 0 auto; }
 .section-heading { display: grid; grid-template-columns: 1fr 3fr; gap: 30px; align-items: start; margin-bottom: 56px; }
 .kicker { color: var(--accent); font-size: 11px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; margin: 7px 0 0; }
 .section-heading h2, .contact-section h2 { font-size: clamp(40px, 5.5vw, 72px); line-height: .98; letter-spacing: -.063em; margin: 0; max-width: 800px; }
@@ -89,6 +99,17 @@ main { position: relative; min-height: 100vh; }
 .accent-cyan .project-impact svg { color: #45dce8; }
 .accent-amber .project-impact svg { color: #ffbf3f; }
 .accent-rose .project-impact svg { color: #ff6f9c; }
+
+.skills-section { position: relative; }
+.skills-playground { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+.skills-caption { min-height: 76px; padding: 19px 23px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid var(--line); }
+.skills-caption > svg { width: 20px; color: var(--accent); }
+.skills-caption div { display: flex; flex-direction: column; gap: 4px; }
+.skills-caption strong { font-size: 13px; }
+.skills-caption span { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.matter-scene { width: 100%; height: 500px; cursor: grab; touch-action: none; }
+.matter-scene:active { cursor: grabbing; }
+.matter-scene canvas { display: block; width: 100% !important; height: 100% !important; }
 
 .experience-list { border-top: 1px solid var(--line); }
 .experience-item { display: grid; grid-template-columns: 1fr 3fr; gap: 30px; padding: 44px 0; border-bottom: 1px solid var(--line); }
@@ -152,6 +173,7 @@ footer { padding: 30px 0 100px; display: flex; justify-content: space-between; c
   .projects-grid { grid-template-columns: 1fr; }
   .project-media { height: min(58vw, 390px); }
   .project-description { min-height: auto; }
+  .matter-scene { height: 390px; }
   .experience-meta { display: flex; justify-content: space-between; align-items: center; }
   .recognition-grid { grid-template-columns: 1fr; }
   .award-card { min-height: 200px; }

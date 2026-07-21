@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MatterBox from "@/components/DraggableSkills/MatterBox";
 import {
   ArrowUpRight,
   Award,
@@ -76,7 +77,7 @@ const experience = [
   {
     role: "Lead AI Engineer",
     company: "RémAI",
-    period: "Jan 2026 — Present",
+    period: "Jan 2026 - Present",
     location: "Remote · Canada",
     description:
       "Leading delivery of production conversational AI systems, technical infrastructure, incident response, and engineering sprints across a growing client portfolio.",
@@ -87,12 +88,12 @@ const experience = [
       "Introduced Qdrant-backed product retrieval for lower-latency and multimodal catalog search.",
     ],
     stack: ["Python", "FastAPI", "Qdrant", "Postgres", "Docker", "CI/CD"],
-    note: "NDA protected — outcomes only",
+    note: "NDA protected, outcomes only",
   },
   {
     role: "AI Engineer",
     company: "Mindbay Technologies",
-    period: "Nov 2024 — Dec 2025",
+    period: "Nov 2024 - Dec 2025",
     location: "Remote · United Kingdom",
     description:
       "Built RAG and LLM response systems for an AI mental-health platform, then extended the product into personalized engagement and AI-driven end-to-end testing.",
@@ -111,7 +112,7 @@ const internships = [
   {
     company: "ImageIn Esprit",
     role: "Software & AI Engineer Intern",
-    period: "Jun — Aug 2024",
+    period: "Jun - Aug 2024",
     detail: "Career and job recommendation system with Python, TensorFlow, and Flask.",
   },
   {
@@ -170,6 +171,7 @@ export default function Page() {
         </Link>
         <nav aria-label="Primary navigation">
           <Link href="#work">Work</Link>
+          <Link href="#skills">Skills</Link>
           <Link href="#experience">Experience</Link>
           <Link href="#awards">Awards</Link>
           <a className="header-cta" href={RESUME_URL} target="_blank" rel="noreferrer">
@@ -183,7 +185,7 @@ export default function Page() {
         <p className="hero-kicker">I build AI systems that survive contact with production.</p>
         <h1>Adem Saidi</h1>
         <p className="hero-copy">
-          Software engineer working across <strong>agent infrastructure</strong>, <strong>retrieval systems</strong>, and <strong>applied machine learning</strong> — from revenue-generating conversational AI to award-winning developer tools.
+          Software engineer working across <strong>agent infrastructure</strong>, <strong>retrieval systems</strong>, and <strong>applied machine learning</strong>, from revenue-generating conversational AI to award-winning developer tools.
         </p>
         <div className="hero-actions">
           <a className="button button-primary" href="mailto:adem.saidi@insat.ucar.tn">
@@ -205,6 +207,7 @@ export default function Page() {
       </section>
 
       <section className="section shell" id="work">
+        <p className="code-tag" aria-hidden="true">&lt;Projects&gt;</p>
         <SectionHeading kicker="01 / Selected work" description="Systems chosen for technical depth, measurable outcomes, and a story worth telling.">
           Work that goes beyond the demo.
         </SectionHeading>
@@ -243,10 +246,30 @@ export default function Page() {
             </article>
           ))}
         </div>
+        <p className="code-tag code-tag-close" aria-hidden="true">&lt;/Projects&gt;</p>
+      </section>
+
+      <section className="section shell skills-section" id="skills">
+        <p className="code-tag" aria-hidden="true">&lt;Skills&gt;</p>
+        <SectionHeading kicker="02 / Skills" description="Grab a technology and throw it around. Yes, the icons have physics.">
+          The toolbox, but make it draggable.
+        </SectionHeading>
+        <div className="skills-playground">
+          <div className="skills-caption">
+            <Code2 />
+            <div>
+              <strong>Drag, drop, collide.</strong>
+              <span>Python, React, FastAPI, databases, infrastructure, and the tools around them.</span>
+            </div>
+          </div>
+          <MatterBox />
+        </div>
+        <p className="code-tag code-tag-close" aria-hidden="true">&lt;/Skills&gt;</p>
       </section>
 
       <section className="section shell" id="experience">
-        <SectionHeading kicker="02 / Experience" description="Product engineering, ML systems, and the operational work required to keep them useful.">
+        <p className="code-tag" aria-hidden="true">&lt;Experience&gt;</p>
+        <SectionHeading kicker="03 / Experience" description="Product engineering, ML systems, and the operational work required to keep them useful.">
           From model output to business outcome.
         </SectionHeading>
         <div className="experience-list">
@@ -286,10 +309,12 @@ export default function Page() {
             ))}
           </div>
         </div>
+        <p className="code-tag code-tag-close" aria-hidden="true">&lt;/Experience&gt;</p>
       </section>
 
       <section className="section shell" id="awards">
-        <SectionHeading kicker="03 / More work & recognition">
+        <p className="code-tag" aria-hidden="true">&lt;Awards&gt;</p>
+        <SectionHeading kicker="04 / More work & recognition">
           Breadth, without the project graveyard.
         </SectionHeading>
         <div className="recognition-grid">
@@ -320,16 +345,19 @@ export default function Page() {
             </article>
           ))}
         </div>
+        <p className="code-tag code-tag-close" aria-hidden="true">&lt;/Awards&gt;</p>
       </section>
 
       <section className="section shell contact-section">
-        <p className="kicker">04 / Contact</p>
+        <p className="code-tag" aria-hidden="true">&lt;Contact&gt;</p>
+        <p className="kicker">05 / Contact</p>
         <h2>Have a hard AI problem?<br /><span>I&apos;d like to hear it.</span></h2>
         <p>I&apos;m especially interested in agent reliability, retrieval-heavy products, and applied ML systems with real users.</p>
         <div className="hero-actions">
           <a className="button button-primary" href="mailto:adem.saidi@insat.ucar.tn"><Mail size={17} /> adem.saidi@insat.ucar.tn</a>
           <a className="button button-secondary" href={RESUME_URL} target="_blank" rel="noreferrer">View résumé <ArrowUpRight size={16} /></a>
         </div>
+        <p className="code-tag code-tag-close" aria-hidden="true">&lt;/Contact&gt;</p>
       </section>
 
       <footer className="shell">
