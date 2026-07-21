@@ -317,6 +317,22 @@ export default function Page() {
         <SectionHeading kicker="04 / More work & recognition">
           Breadth, without the project graveyard.
         </SectionHeading>
+        <figure className="award-moment">
+          <Image
+            src={`${MEDIA_URL}/gommage-third-place.png`}
+            alt="The Gommage team receiving third place at the Artificial Intelligence National Summit Hackathon"
+            width={1280}
+            height={852}
+            unoptimized
+          />
+          <figcaption>
+            <div>
+              <p>Artificial Intelligence National Summit · June 2026</p>
+              <h3>Gommage finished third.</h3>
+            </div>
+            <span>Agentic AI for Enterprise Automation</span>
+          </figcaption>
+        </figure>
         <div className="recognition-grid">
           <div className="award-card featured-award">
             <Award />

@@ -138,6 +138,12 @@ main { position: relative; min-height: 100vh; }
 .internship-item p { margin: 7px 0 0; color: var(--muted); line-height: 1.5; font-size: 12px; }
 .internship-item .company { color: var(--accent); margin-top: 3px; }
 
+.award-moment { margin: 0 0 18px; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+.award-moment img { display: block; width: 100%; height: auto; aspect-ratio: 1280 / 852; object-fit: cover; }
+.award-moment figcaption { min-height: 104px; padding: 22px 26px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line); }
+.award-moment figcaption p { margin: 0 0 6px; color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; }
+.award-moment figcaption h3 { margin: 0; font-size: 25px; letter-spacing: -.04em; }
+.award-moment figcaption > span { color: var(--muted); font: 11px/1.5 monospace; text-align: right; }
 .recognition-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .award-card { min-height: 245px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 26px; display: flex; flex-direction: column; justify-content: flex-end; }
 .award-card > svg { margin-bottom: auto; color: var(--accent); }
@@ -176,6 +182,8 @@ footer { padding: 30px 0 100px; display: flex; justify-content: space-between; c
   .matter-scene { height: 390px; }
   .experience-meta { display: flex; justify-content: space-between; align-items: center; }
   .recognition-grid { grid-template-columns: 1fr; }
+  .award-moment figcaption { align-items: flex-start; flex-direction: column; gap: 9px; }
+  .award-moment figcaption > span { text-align: left; }
   .award-card { min-height: 200px; }
 }
 
