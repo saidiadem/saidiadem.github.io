@@ -251,14 +251,14 @@ export default function Page() {
 
       <section className="section shell skills-section" id="skills">
         <p className="code-tag" aria-hidden="true">&lt;Skills&gt;</p>
-        <SectionHeading kicker="02 / Skills" description="Grab a technology and throw it around. Yes, the icons have physics.">
+        <SectionHeading kicker="02 / Skills" description="Grab a technology and throw it around. Yes, the stack has physics.">
           The toolbox, but make it draggable.
         </SectionHeading>
         <div className="skills-playground">
           <div className="skills-caption">
             <Code2 />
             <div>
-              <strong>Drag, drop, collide.</strong>
+              <strong>Drag, stack, collide.</strong>
               <span>Python, React, FastAPI, databases, infrastructure, and the tools around them.</span>
             </div>
           </div>
