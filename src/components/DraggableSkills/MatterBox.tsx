@@ -61,8 +61,8 @@ export default function MatterBox() {
     if (!scene) return;
 
     const { Bodies, Composite, Engine, Events, Mouse, MouseConstraint, Render, Runner } = Matter;
-    const width = Math.min(scene.clientWidth || 760, 760);
-    const height = width < 520 ? 300 : 340;
+    const width = Math.round(scene.clientWidth || 760);
+    const height = width;
     const compact = width < 520;
     const engine = Engine.create({ gravity: { x: 0, y: 0.72 } });
     const world = engine.world;

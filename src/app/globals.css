@@ -101,13 +101,13 @@ main { position: relative; min-height: 100vh; }
 .accent-rose .project-impact svg { color: #ff6f9c; }
 
 .skills-section { position: relative; }
-.skills-playground { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+.skills-playground { width: min(100%, 760px); margin-inline: auto; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
 .skills-caption { min-height: 76px; padding: 19px 23px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid var(--line); }
 .skills-caption > svg { width: 20px; color: var(--accent); }
 .skills-caption div { display: flex; flex-direction: column; gap: 4px; }
 .skills-caption strong { font-size: 13px; }
 .skills-caption span { color: var(--muted); font-size: 11px; line-height: 1.5; }
-.matter-scene { width: 100%; height: 340px; cursor: grab; touch-action: none; }
+.matter-scene { width: 100%; aspect-ratio: 1; cursor: grab; touch-action: none; }
 .matter-scene:active { cursor: grabbing; }
 .matter-scene canvas { display: block; width: 100% !important; height: 100% !important; }
 
@@ -190,7 +190,6 @@ footer { padding: 30px 0 100px; display: flex; justify-content: space-between; c
   .projects-grid { grid-template-columns: 1fr; }
   .project-media { height: min(58vw, 390px); }
   .project-description { min-height: auto; }
-  .matter-scene { height: 300px; }
   .experience-meta { display: flex; justify-content: space-between; align-items: center; }
   .recognition-grid { grid-template-columns: 1fr; }
   .award-moment figcaption { align-items: flex-start; flex-direction: column; gap: 9px; }
