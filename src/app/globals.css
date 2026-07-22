@@ -177,6 +177,16 @@ main { position: relative; min-height: 100vh; }
 .contact-section > p:not(.kicker) { max-width: 600px; color: var(--muted); line-height: 1.6; margin: 28px 0; }
 footer { padding: 30px 0 100px; display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; }
 
+.floating-nav { position: fixed; z-index: 50; left: 50%; bottom: 18px; height: 62px; padding: 7px 9px; display: flex; align-items: center; gap: 3px; color: var(--muted); background: rgba(12,14,17,.82); border: 1px solid rgba(255,255,255,.14); border-radius: 19px; box-shadow: 0 18px 55px rgba(0,0,0,.48), inset 0 1px rgba(255,255,255,.055); transform: translateX(-50%); backdrop-filter: blur(18px) saturate(135%); }
+.floating-nav-brand { width: 47px; color: var(--text); font-size: 16px; font-weight: 850; letter-spacing: -.06em; text-align: center; }
+.floating-nav-brand span { color: var(--accent); }
+.floating-nav-divider { width: 1px; height: 28px; margin: 0 5px 0 1px; background: var(--line); }
+.floating-nav-link { position: relative; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 13px; transition: color .18s ease, background .18s ease, transform .18s ease; }
+.floating-nav-link svg { width: 18px; height: 18px; }
+.floating-nav-link:hover, .floating-nav-link:focus-visible { color: #11150b; background: var(--accent); outline: none; transform: translateY(-5px) scale(1.08); }
+.floating-nav-link:after { content: attr(data-label); position: absolute; left: 50%; bottom: calc(100% + 12px); padding: 6px 8px; color: var(--text); background: #15181d; border: 1px solid var(--line); border-radius: 6px; font: 10px/1 monospace; opacity: 0; pointer-events: none; transform: translate(-50%, 4px); transition: opacity .15s ease, transform .15s ease; white-space: nowrap; }
+.floating-nav-link:hover:after, .floating-nav-link:focus-visible:after { opacity: 1; transform: translate(-50%, 0); }
+
 @media (max-width: 820px) {
   .shell { width: min(100% - 32px, 680px); }
   .site-header nav > a:not(.header-cta) { display: none; }
@@ -216,6 +226,10 @@ footer { padding: 30px 0 100px; display: flex; justify-content: space-between; c
   .internship-panel { padding: 24px; }
   .internship-item { grid-template-columns: 1fr; gap: 8px; }
   .additional-list article > div > div { display: block; }
+  .floating-nav { bottom: 10px; height: 58px; padding: 6px; gap: 1px; border-radius: 17px; }
+  .floating-nav-brand, .floating-nav-divider { display: none; }
+  .floating-nav-link { width: 45px; height: 45px; }
+  .floating-nav-link:after { display: none; }
   .additional-list span { display: block; margin-top: 5px; }
   .contact-section { margin-top: 80px; }
   footer { flex-direction: column; gap: 8px; }

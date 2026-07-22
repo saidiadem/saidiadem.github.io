@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MatterBox from "@/components/DraggableSkills/MatterBox";
 import AwardsCarousel from "@/components/AwardsCarousel/AwardsCarousel";
+import FloatingNav from "@/components/FloatingNav/FloatingNav";
 import {
   ArrowUpRight,
   Award,
@@ -336,7 +337,7 @@ export default function Page() {
             <Award />
             <p>3rd place · 2026</p>
             <h3>DataQuest</h3>
-            <span>Olea · Explainable insurance recommendations</span>
+            <span>Data Dangereuse · Explainable insurance recommendations</span>
           </div>
         </div>
         <div className="additional-list">
@@ -350,7 +351,7 @@ export default function Page() {
         <p className="code-tag code-tag-close" aria-hidden="true">&lt;/Awards&gt;</p>
       </section>
 
-      <section className="section shell contact-section">
+      <section className="section shell contact-section" id="contact">
         <p className="code-tag" aria-hidden="true">&lt;Contact&gt;</p>
         <p className="kicker">05 / Contact</p>
         <h2>Have a hard AI problem?<br /><span>I&apos;d like to hear it.</span></h2>
@@ -366,6 +367,7 @@ export default function Page() {
         <span>© 2026 Adem Saidi</span>
         <span>Designed and built in Tunis.</span>
       </footer>
+      <FloatingNav />
     </main>
   );
 }

@@ -16,6 +16,13 @@ const slides = [
     detail: "Agentic AI for Enterprise Automation",
   },
   {
+    image: `${MEDIA_URL}/media/dataquest-third-place.webp`,
+    alt: "The Data Dangereuse team receiving third place at the DataQuest competition",
+    kicker: "DataQuest · Data Overflow 2026",
+    title: "Data Dangereuse finished third.",
+    detail: "Explainable insurance recommendations",
+  },
+  {
     image: `${MEDIA_URL}/public/unbreaking.png`,
     alt: "Adem and his team at the Unbreaking News 2.0 hackathon",
     kicker: "Unbreaking News 2.0 · November 2025",
