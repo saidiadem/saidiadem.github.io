@@ -183,6 +183,7 @@ footer { padding: 30px 0 100px; display: flex; justify-content: space-between; c
 .floating-nav-divider { width: 1px; height: 28px; margin: 0 5px 0 1px; background: var(--line); }
 .floating-nav-link { position: relative; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 13px; transition: color .18s ease, background .18s ease, transform .18s ease; }
 .floating-nav-link svg { width: 18px; height: 18px; }
+.floating-nav-external { color: var(--text); }
 .floating-nav-link:hover, .floating-nav-link:focus-visible { color: #11150b; background: var(--accent); outline: none; transform: translateY(-5px) scale(1.08); }
 .floating-nav-link:after { content: attr(data-label); position: absolute; left: 50%; bottom: calc(100% + 12px); padding: 6px 8px; color: var(--text); background: #15181d; border: 1px solid var(--line); border-radius: 6px; font: 10px/1 monospace; opacity: 0; pointer-events: none; transform: translate(-50%, 4px); transition: opacity .15s ease, transform .15s ease; white-space: nowrap; }
 .floating-nav-link:hover:after, .floating-nav-link:focus-visible:after { opacity: 1; transform: translate(-50%, 0); }
@@ -227,8 +228,10 @@ footer { padding: 30px 0 100px; display: flex; justify-content: space-between; c
   .internship-item { grid-template-columns: 1fr; gap: 8px; }
   .additional-list article > div > div { display: block; }
   .floating-nav { bottom: 10px; height: 58px; padding: 6px; gap: 1px; border-radius: 17px; }
-  .floating-nav-brand, .floating-nav-divider { display: none; }
-  .floating-nav-link { width: 45px; height: 45px; }
+  .floating-nav-brand, .floating-nav-divider:not(.floating-nav-external-divider) { display: none; }
+  .floating-nav-external-divider { display: block; height: 24px; margin: 0 2px; }
+  .floating-nav-link { width: 32px; height: 44px; border-radius: 11px; }
+  .floating-nav-link svg { width: 17px; height: 17px; }
   .floating-nav-link:after { display: none; }
   .additional-list span { display: block; margin-top: 5px; }
   .contact-section { margin-top: 80px; }
