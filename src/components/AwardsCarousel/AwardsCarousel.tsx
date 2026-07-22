@@ -30,7 +30,7 @@ const slides = [
     detail: "Colonial bias analysis for Wikipedia",
   },
   {
-    image: `${MEDIA_URL}/public/cybersphere.png`,
+    image: `${MEDIA_URL}/media/cybersphere.webp`,
     alt: "Team Fokspy at the national Cybersphere cybersecurity congress",
     kicker: "Cybersphere · National cybersecurity congress",
     title: "Team Fokspy placed fourth.",
