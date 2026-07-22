@@ -6,10 +6,6 @@ import { useEffect, useRef, useState } from "react";
 const skills = [
   ["Python", "#f2cf4a", "python/3776AB"],
   ["FastAPI", "#55d6be", "fastapi/009688"],
-  ["React", "#61dafb", "react/61DAFB"],
-  ["TypeScript", "#6aa9ff", "typescript/3178C6"],
-  ["Next.js", "#f2f1ec", "nextdotjs/FFFFFF"],
-  ["C++", "#69a9db", "cplusplus/00599C"],
   ["PyTorch", "#ff8a5b", "pytorch/EE4C2C"],
   ["TensorFlow", "#ffb347", "tensorflow/FF6F00"],
   ["Scikit-learn", "#f4a261", "scikitlearn/F7931E"],
@@ -19,18 +15,9 @@ const skills = [
   ["Milvus", "#66d9ef", "milvus/00A1EA"],
   ["Neo4j", "#73b7ff", "neo4j/4581C3"],
   ["Postgres", "#8fb9e8", "postgresql/4169E1"],
-  ["MySQL", "#73b7c9", "mysql/4479A1"],
   ["Docker", "#56a8ff", "docker/2496ED"],
   ["GitHub Actions", "#74a8ff", "githubactions/2088FF"],
-  ["RabbitMQ", "#ff8a3d", "rabbitmq/FF6600"],
-  ["Electron", "#8ed1dc", "electron/47848F"],
-  ["Expo", "#f2f1ec", "expo/FFFFFF"],
-  ["NestJS", "#ed5276", "nestjs/E0234E"],
-  ["Flask", "#f2f1ec", "flask/FFFFFF"],
-  ["Spring Boot", "#89c95d", "springboot/6DB33F"],
-  ["Symfony", "#f2f1ec", "symfony/FFFFFF"],
   ["Ollama", "#f2f1ec", "ollama/FFFFFF"],
-  ["Jira Forge", "#7ba6ff", "jira/2684FF"],
   ["Git", "#ff765f", "git/F05032"],
   ["Linux", "#f2cf4a", "linux/FCC624"],
 ] as const;
@@ -94,7 +81,7 @@ export default function MatterBox() {
     const bodies: SkillBody[] = [];
     skills.forEach(([label, color, icon], index) => {
       const timer = setTimeout(() => {
-        const radius = compact ? 22 : 26;
+        const radius = compact ? 44 : 52;
         const body = Bodies.circle(
           radius + Math.random() * Math.max(1, width - radius * 2),
           26 + Math.random() * 82,
@@ -126,7 +113,7 @@ export default function MatterBox() {
       bodies.forEach((body) => {
         const icon = body.plugin.skillIcon;
         if (icon?.complete && icon.naturalWidth > 0) {
-          const iconSize = compact ? 22 : 26;
+          const iconSize = compact ? 44 : 52;
           context.save();
           context.translate(body.position.x, body.position.y);
           context.rotate(body.angle);

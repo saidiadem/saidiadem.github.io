@@ -261,7 +261,7 @@ export default function Page() {
             <Code2 />
             <div>
               <strong>Drag, stack, collide.</strong>
-              <span>Python, React, FastAPI, databases, infrastructure, and the tools around them.</span>
+              <span>Python, FastAPI, applied ML, vector databases, and production infrastructure.</span>
             </div>
           </div>
           <MatterBox />
