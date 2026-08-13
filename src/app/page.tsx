@@ -18,7 +18,8 @@ import {
 
 const MEDIA_URL =
   "https://cdn.jsdelivr.net/gh/saidiadem/saidiadem.github.io@portfolio-media/media";
-const RESUME_URL = `${MEDIA_URL}/adem-saidi-resume.pdf`;
+const RESUME_URL =
+  "https://cdn.jsdelivr.net/gh/saidiadem/saidiadem.github.io@8a0bd4627bd018080326ebb842ba2846f300099d/media/adem-saidi-resume.pdf";
 
 const projects = [
   {

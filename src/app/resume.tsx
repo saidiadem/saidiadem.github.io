@@ -2,7 +2,7 @@
 import React from 'react';
 
 const ResumePage = () => {
-  const resumeUrl = "https://cdn.jsdelivr.net/gh/saidiadem/saidiadem.github.io@portfolio-media/media/adem-saidi-resume.pdf";
+  const resumeUrl = "https://cdn.jsdelivr.net/gh/saidiadem/saidiadem.github.io@8a0bd4627bd018080326ebb842ba2846f300099d/media/adem-saidi-resume.pdf";
 
   return (
     <object

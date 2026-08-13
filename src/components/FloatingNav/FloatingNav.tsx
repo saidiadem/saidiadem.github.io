@@ -31,7 +31,7 @@ const externalItems = [
     icon: Icons.linkedin,
   },
   {
-    href: "https://cdn.jsdelivr.net/gh/saidiadem/saidiadem.github.io@portfolio-media/media/adem-saidi-resume.pdf",
+    href: "https://cdn.jsdelivr.net/gh/saidiadem/saidiadem.github.io@8a0bd4627bd018080326ebb842ba2846f300099d/media/adem-saidi-resume.pdf",
     label: "Résumé",
     icon: NotebookIcon,
   },

@@ -37,7 +37,7 @@ export const DATA = {
       },
       resume: {
         name: "Resume",
-        url: "https://cdn.jsdelivr.net/gh/saidiadem/saidiadem.github.io@portfolio-media/media/adem-saidi-resume.pdf",
+        url: "https://cdn.jsdelivr.net/gh/saidiadem/saidiadem.github.io@8a0bd4627bd018080326ebb842ba2846f300099d/media/adem-saidi-resume.pdf",
         icon: NotebookIcon,
         navbar: true,
       },
