@@ -84,7 +84,7 @@ const experience = [
     location: "Remote · Canada",
     description:
       "Leading delivery of production conversational AI systems, technical infrastructure, incident response, and engineering sprints across a growing client portfolio.",
-    metrics: ["$19k+ client revenue in 21 days", "11.4k+ end users", "0 → 4 paying clients"],
+    metrics: ["$60k+ client revenue in 15 days", "11.4k+ end users", "0 → 4 paying clients"],
     highlights: [
       "Rebuilt delivery infrastructure around containerized deployments, automated CI/CD, monitoring, and production incident response.",
       "Led interns, client demos, proof-of-concepts, and engineering sprints from initial architecture through live operations.",
